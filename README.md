@@ -1,87 +1,69 @@
-# ✉️ AI Email Auto-Responder
+# Project #17 — AI Email Auto-Responder
 
-![Python](https://img.shields.io/badge/Python-3.14-blue?logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)
-![Groq](https://img.shields.io/badge/Groq-LLM-F55036?logo=groq&logoColor=white)
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?style=flat&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white" />
+  <img src="https://img.shields.io/badge/Gemini%20API-4285F4?style=flat&logo=google&logoColor=white" />
+  <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat&logo=chainlink&logoColor=white" />
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat" />
+</p>
 
-AI agent that reads an incoming business email and drafts a polished, ready-to-send reply in **Bahasa Indonesia** — complete with the right salutation, a body that answers every question, a clear call-to-action, and a professional closing.
-
-Built for service businesses (rope access, glass cleaning, building maintenance, waterproofing) where fast, professional email turnaround wins deals.
-
----
-
-## ✨ Features
-
-- **Intent & urgency analysis** — classifies intent, urgency (High/Medium/Low), and sentiment before writing a word.
-- **Smart drafting** — answers *all* detected key questions and proposes the right CTA (site visit / quotation / meeting).
-- **Tone selection** — Profesional, Santai tapi Profesional, Assertive, or Empatik.
-- **Context presets** — PT RKARI, AVA.Group, or Generic.
-- **One-click copy** — copy the finished draft to clipboard and jump straight to Gmail.
+> AI agent yang membaca email masuk dan otomatis membuat draft balasan profesional dalam Bahasa Indonesia. Tinggal copy-paste kirim.
 
 ---
 
-## 🛠️ Tech Stack
+## Demo Langsung
 
-| Layer | Tool |
-|-------|------|
-| UI | Streamlit (wide layout) |
-| LLM | Groq (`llama-3.3-70b-versatile`) |
-| Language | Python 3.14 |
+[![Deploy to Streamlit Cloud](https://img.shields.io/badge/Deploy-Streamlit%20Cloud-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://share.streamlit.io/deploy?repository=qurrrrsebastian-prog/ai-email-auto-responder)
+
+**Tech Stack:** `Google Gemini API` · `LangChain` · `NLP` · `Streamlit`
 
 ---
 
-## 🚀 Run It
+## Fitur
 
-```powershell
-# 1. Install dependencies
+| Fitur | Status |
+|-------|--------|
+| Draft reply profesional (ID) | ✅ |
+| Tone adjustment (formal/casual) | ✅ |
+| Context-aware response | ✅ |
+| Copy-paste ready output | ✅ |
+| Multiple email types support | ✅ |
+| Tema gelap AVA purple | ✅ |
+
+---
+
+## Cara Menjalankan
+
+```bash
+git clone https://github.com/qurrrrsebastian-prog/ai-email-auto-responder.git
+cd ai-email-auto-responder
 pip install -r requirements.txt
-
-# 2. Set your Groq API key (PowerShell)
-$env:GROQ_API_KEY = "gsk_your_key_here"
-
-# 3. Launch
+$env:GEMINI_API_KEY="your_api_key_here"
 streamlit run app.py
 ```
 
-> No API key in your environment? Paste it directly into the sidebar.
+## Deploy ke Streamlit Cloud (GRATIS)
+
+1. [share.streamlit.io](https://share.streamlit.io) → Login GitHub
+2. **New app** → Pilih repo ini
+3. Tambahkan secret: `GEMINI_API_KEY`
+4. **Deploy**
 
 ---
 
-## 🎬 Demo Example
+## Struktur Project
 
-**Input (email masuk):**
 ```
-Dari: gm@megatower.co.id
-Subjek: Pembersihan kaca gedung 18 lantai
-
-Halo, kami butuh pembersihan kaca eksterior gedung 18 lantai di SCBD.
-Berapa estimasi biaya dan kapan tim bisa survei lokasi?
-```
-
-**Output (draft balasan):**
-```
-Yth. Bapak/Ibu di Mega Tower,
-
-Terima kasih atas ketertarikan Anda pada layanan pembersihan kaca eksterior kami...
-Untuk gedung 18 lantai, estimasi awal berada pada rentang Rp 60-100jt tergantung
-hasil survei. Kami dapat menjadwalkan survei lokasi minggu ini...
-
-Hormat kami,
-Avatar Putra Sigit
+ai-email-auto-responder/
+├── app.py              # Main Streamlit app (12KB)
+├── requirements.txt    # Dependencies
+├── .streamlit/
+│   └── config.toml    # AVA purple branding
+├── .gitignore
+└── LICENSE            # MIT License
 ```
 
 ---
 
-## 📊 Key Insights
-
-1. **~6 seconds** from paste to finished draft — vs. ~8 minutes writing manually (≈98% time saved).
-2. **5 analysis fields** (intent, urgency, sentiment, key questions, CTA) extracted before drafting, so no question goes unanswered.
-3. **4 tone profiles × 3 context presets = 12 reply styles** from a single email, no prompt engineering required.
-
----
-
-## 👤 Author
-
-**Avatar Putra Sigit**
-- GitHub: [qurrrrsebastian-prog](https://github.com/qurrrrsebastian-prog)
-- LinkedIn: [avatarputrasigit](https://www.linkedin.com/in/avatarputrasigit)
+**Dibuat oleh:** [Avatar Putra Sigit](https://github.com/qurrrrsebastian-prog) · Founder @AVA.Group
